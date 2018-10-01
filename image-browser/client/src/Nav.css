@@ -1,0 +1,19 @@
+.Nav {
+  padding: 0 4%;
+}
+
+.Nav-header {
+  font-size: 23px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.Nav-buttons-list {
+  padding-left: 0;
+}
+
+.Nav-buttons-list-item {
+  display: inline-block;
+  list-style-type: none;
+  margin: 5px;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "js-data-structures",
+  "version": "0.0.1",
+  "description": "Data structures implemented in JavaScript",
+  "main": "index.js",
+  "repository": "git@github.com:annaborja/js-data-structures.git",
+  "author": "Anna Borja",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}

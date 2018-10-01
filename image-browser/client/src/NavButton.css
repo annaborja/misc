@@ -1,0 +1,20 @@
+.NavButton {
+  background-color: transparent;
+  border-color: #999;
+  border-width: 1px;
+  color: #999;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.NavButton:focus,
+.NavButton:hover {
+  border-color: #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.NavButton-selected {
+  border-color: #fff;
+  color: #fff;
+}

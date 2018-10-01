@@ -1,0 +1,9 @@
+.Image {
+  transition: all .2s ease-in-out;
+}
+
+.Image:focus,
+.Image:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
