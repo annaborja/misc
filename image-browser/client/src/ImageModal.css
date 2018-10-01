@@ -1,0 +1,57 @@
+.ImageModal {
+  background-color: #000;
+  color: #999;
+  left: 50%;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: scroll;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ImageModal-image-container {
+  min-height: 515px;
+  min-width: 910px;
+  padding: 4% 4% 0 4%;
+}
+
+.ImageModal-text {
+  padding: 0 4%;
+}
+
+.ImageModal-close-link {
+  background-color: transparent;
+  border-color: #999;
+  border-width: 1px;
+  color: #999;
+  font-size: 12px;
+  margin-top: 1.5em;
+  padding: 5px 10px;
+}
+
+.ImageModal-close-link:hover {
+  color: #fff;
+  cursor: pointer;
+  border-color: #fff;
+}
+
+.ImageModal-details-list-term {
+  display: inline;
+  font-weight: bold;
+}
+
+.ImageModal-details-list-term:before {
+  content: '';
+  display: block;
+}
+
+.ImageModal-details-list-term:after {
+  content: ': ';
+}
+
+.ImageModal-details-list-def {
+  display: inline-block;
+  margin-bottom: 0.5em;
+  margin-left: 0;
+}
