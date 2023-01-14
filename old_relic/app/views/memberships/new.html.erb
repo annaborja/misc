@@ -1,0 +1,81 @@
+<h1><%= t('membership.purchase_form.title',
+  level: if @prepopulated_level.present?
+    t("membership.level.#{@prepopulated_level.name}.name")
+  else
+    ''
+  end
+).html_safe %></h1>
+
+<%= form_tag memberships_path, class: 'form-styled' do %>
+  <% if flash[:errors].present? -%>
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% flash[:errors].each do |error| -%>
+          <li><%= error %></li>
+        <% end -%>
+      </ul>
+    </div>
+  <% end -%>
+
+  <fieldset>
+    <%= label_tag 'level', t('membership.purchase_form.choose_level') %>
+    <%= select_tag 'level',
+      options_for_select(
+        @membership_levels.map do |membership_level|
+          [
+            t('membership.purchase_form.level_choice',
+              name: t("membership.level.#{membership_level.name}.name"),
+              info: t('membership.cost_per_interval',
+                cost: Money.new(membership_level.usd_cost, 'USD').format,
+                interval: t('membership.interval.month')
+              )
+            ),
+            membership_level.name
+          ]
+        end,
+        @prepopulated_level.try(:name)
+      ),
+      class: 'js-membership-purchase-form-select-level',
+      data: (
+        @membership_levels.map do |membership_level|
+          [
+            membership_level.name,
+            {
+              additional_guest_usd_cost: membership_level.additional_guest_usd_cost,
+              name: t("membership.level.#{membership_level.name}.name"),
+              num_free_guests: membership_level.num_free_guests,
+              usd_cost: membership_level.usd_cost
+            }
+          ]
+        end.to_h
+      ),
+      include_blank: true,
+      required: true
+    %>
+  </fieldset>
+
+  <fieldset>
+    <%= label_tag 'num_guests', t('membership.purchase_form.how_many_guests') %>
+    <%= number_field_tag 'num_guests', 0, class: 'js-membership-purchase-form-num-guests', max: 1000, min: 0 %>
+  </fieldset>
+
+  <div class="well">
+    <h2 class="js-membership-purchase-form-cost"><%=
+      Money.new(@prepopulated_level.try(:usd_cost) || 0, 'USD').format
+    %></h2>
+  </div>
+
+  <% if @gateway_customers.length > 0 -%>
+    <%= submit_tag t('membership.purchase_form.submit'),
+      class: 'btn btn-lg btn-success btn-block',
+      data: {
+        disable_with: t('membership.purchase_form.submitting')
+      }
+    %>
+  <% else -%>
+    <script src="https://checkout.stripe.com/checkout.js"
+      class="js-membership-purchase-form-stripe-button stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-locale="<%= I18n.locale %>"></script>
+  <% end -%>
+<% end %>

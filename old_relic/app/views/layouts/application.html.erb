@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><%= t('global.title') %></title>
+    <meta name="description" content="<%= t('global.description') %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="<%= controller_name %>_<%= action_name %>">
+    <%= render 'global/nav' %>
+
+    <main class="container" role="main">
+      <% if notice.present? %><div class="alert alert-success" role="alert"><%= notice %></div><% end %>
+      <% if alert.present? %><div class="alert alert-warning" role="alert"><%= alert %></div><% end %>
+
+      <%= yield %>
+    </main>
+
+    <%= render 'global/footer' %>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  global:
+    title: 'Old Relic Social Club'
+    description: 'The socialest of clubs.'
+
+  activerecord:
+    attributes:
+      user:
+        email: 'Email address'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+
+  authentication:
+    forgot_password:
+      nav: 'Forgot your password?'
+    login:
+      title: 'Log into your account'
+      nav: 'Log In'
+      submit: 'Log In'
+    logout:
+      nav: 'Log Out'
+    placeholder:
+      email: 'Email address'
+      password_confirmation: 'Confirm password'
+      password:
+        create: 'Password (%{n} characters minimum)'
+        login: 'Password'
+    remember_me: 'Remember me'
+    signup:
+      title: 'Create an account'
+      nav: 'Sign Up'
+      submit: 'Sign Up'
+
+  nav:
+    account:
+      title: 'Account'
+      membership: 'Membership'
+    toggle_nav: 'Toggle navigation'
+
+  home:
+    carousel:
+      next: 'Next'
+      previous: 'Previous'
+    featurette:
+      one:
+        title: This is a cat.
+        subtitle: Super fluffy. Much meow.
+        description: >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat.
+      two:
+        title: This is a dog.
+        subtitle: Sweetest pit bull you’ll ever meet.
+        description: >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat.
+      three:
+        title: Here’s another dog.
+        subtitle: Loves to fetch. Fears Christmas trees.
+        description: >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat.
+    hero:
+      go_places: 'Go places you’ve never been before'
+      make_memories: 'Make memories you’ll never forget'
+      meet_people: 'Meet new friends'
+    subscriptions:
+      title: Membership Levels
+      basic:
+        description: >
+          Attend private parties every other Friday at the most popular bars
+          in SF—and bring your friends!
+      classic:
+        description: >
+          Jump to the head of the line at the most popular restaurants in San Francisco.
+      modern:
+        description: >
+          Gain VIP access to events, concerts, and private lounges across the Bay Area
+          and a chauffeur whenever you need one.
+
+  membership:
+    title:
+      is_member: 'Thank you for being a member!'
+      is_not_member: 'Become a member'
+    cost_per_interval: '%{cost} per %{interval}'
+    free_guest: 'free guest'
+    free_trial_length: '%{length} free trial'
+    guest: guest
+    interval:
+      day: 'day'
+      month: 'month'
+    level:
+      basic:
+        name: 'Basic'
+        description: 'The most basic of basics.'
+      classic:
+        name: 'Classic'
+        description: 'Classy classy classy.'
+      modern:
+        name: 'Modern'
+        description: 'Sleek, sophisticated, super cool.'
+    n_guests_m_free: '%{n_guests} (%{m} free)'
+    purchase_form:
+      title: 'Become a <span class="js-membership-purchase-form-title-level">%{level}</span> member'
+      error:
+        already_member: 'You are already a %{level} member.'
+        blank_level: 'Please choose a membership level.'
+        invalid_level: 'Invalid membership level.'
+        invalid_num_guests: >
+          Please enter the number of guests you’d like to include in your membership.
+      choose_level: 'Choose your membership level:'
+      how_many_guests: 'How many guests?'
+      level_choice: '%{name} – %{info}'
+      submit: 'Purchase'
+      submitting: 'Processing...'
+      success: 'Thank you! You are now a %{level} member.'
+    subscribe: 'Subscribe &raquo;'
+    subscribed: 'Subscribed'

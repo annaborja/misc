@@ -1,0 +1,22 @@
+.memberships_new {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 15px;
+  }
+}
+
+.memberships_show {
+  text-align: center;
+
+  .subscriptions {
+    margin: 0 auto;
+    max-width: 330px;
+  }
+}
+
+.well {
+  &.purchased {
+    background-color: $blue-translucent;
+  }
+}
